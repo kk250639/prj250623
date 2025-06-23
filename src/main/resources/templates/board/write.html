@@ -6,6 +6,7 @@
 </head>
 <body>
 <h2>게시물 작성</h2>
+
 <form th:action="@{/board/write}" method="post">
     <div>
         <label for="titleInput">제목</label>
@@ -13,7 +14,7 @@
     </div>
     <div>
         <label for="contentTextarea">본문</label>
-        <textarea name="content" id="contentTextarea" cols="30" rows="10"></textarea>
+        <textarea id="contentTextarea" name="content"></textarea>
     </div>
     <div>
         <label for="writerInput">작성자</label>
@@ -23,5 +24,6 @@
         <button>저장</button>
     </div>
 </form>
+
 </body>
 </html>
