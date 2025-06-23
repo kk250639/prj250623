@@ -4,6 +4,7 @@ import com.example.prj250623.board.dto.BoardForm;
 import com.example.prj250623.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,5 +28,15 @@ public class BoardController {
         boardService.add(data);
 
         return "board/write";
+    }
+
+    @GetMapping("list")
+    public String list(Model model) {
+
+        var result = boardService.list();
+
+        model.addAttribute("boardList", result);
+
+        return "board/list";
     }
 }
