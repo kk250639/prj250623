@@ -19,7 +19,8 @@ public class boardController {
     }
 
     @PostMapping("write")
-    public String writePost() {
+    public String writePost(BoardForm data) {
+        System.out.println("data = " + data);
         return "/board/write";
     }
 }
