@@ -30,5 +30,14 @@ public class BoardController {
         return "board/write";
     }
 
+    @GetMapping("list")
+    public String listForm(Model model) {
+
+        var list = boardService.list();
+
+        model.addAttribute("boardList", list);
+
+        return "board/list";
+    }
 
 }
